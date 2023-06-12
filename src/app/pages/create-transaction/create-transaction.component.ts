@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { BlockchainService } from 'src/app/services/blockchain.service';
 import { Router } from '@angular/router';
 // @ts-ignore
-import Transaction from '../../../blockchain/blockchain';
+import Transaction from 'src/blockchain/blockchain.js';
 @Component({
   selector: 'app-create-transaction',
   templateUrl: './create-transaction.component.html',

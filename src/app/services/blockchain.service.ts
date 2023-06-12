@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 // @ts-ignore
-import Blockchain from '../../blockchain/blockchain';
+import Blockchain from 'src/blockchain/blockchain.js';
 // @ts-ignore
-import Transaction from '../../blockchain/blockchain';
+import Transaction from 'src/blockchain/blockchain.js';
 // @ts-ignore
-import Block from '../../blockchain/blockchain';
+import Block from 'src/blockchain/blockchain.js';
 import EC from 'elliptic';
 
 @Injectable({
