@@ -50,6 +50,10 @@
               ],
               "outputHashing": "all"
             },
+            "github-pages": {
+              "baseHref": "/AngularExamplesAndSnippets/"
+            },
+            
             "development": {
               "buildOptimizer": false,
               "optimization": false,
