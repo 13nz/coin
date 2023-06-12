@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit, ChangeDetectorRef  } from '@angular/core';
 import { BlockchainService } from 'src/app/services/blockchain.service';
 // @ts-ignore
 import { Block } from '../../../blockchain/blockchain';
@@ -8,13 +8,24 @@ import { Block } from '../../../blockchain/blockchain';
   templateUrl: './blockchain-viewer.component.html',
   styleUrls: ['./blockchain-viewer.component.scss']
 })
-export class BlockchainViewerComponent {
+export class BlockchainViewerComponent implements OnInit {
   public blocks = [];
   public selectedBlock = null;
 
-  constructor(private blockchainService: BlockchainService) {
-    this.blocks = blockchainService.getBlocks();
+  constructor(private blockchainService: BlockchainService, private changeDetection: ChangeDetectorRef) {
+    this.blocks = blockchainService.blockchainInstance.chain;
     this.selectedBlock = this.blocks[0];
+    console.log(this.blocks);
+  }
+
+  ngOnInit() {
+    //this.blocks = this.blockchainService.getBlocks();
+    this.changeDetection.detectChanges();
+    console.log(this.blocks);
+  }
+
+  public trackItem (index: number, block: Block) {
+    return block.trackId;
   }
 
   

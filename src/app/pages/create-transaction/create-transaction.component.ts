@@ -9,7 +9,7 @@ import Transaction from '../../../blockchain/blockchain';
   styleUrls: ['./create-transaction.component.scss']
 })
 export class CreateTransactionComponent {
-  public newTx = new Transaction();
+  public newTx;
   public walletKey;
 
   constructor(private blockchainService: BlockchainService, private router: Router) {

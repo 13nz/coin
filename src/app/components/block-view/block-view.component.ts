@@ -23,6 +23,7 @@ export class BlockViewComponent implements OnInit {
 
 
   ngOnInit() {
+    this.blocksInChain = this.blockchainService.getBlocks();
   }
 
   blockHasTx() {

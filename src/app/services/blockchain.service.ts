@@ -60,6 +60,8 @@ export class BlockchainService {
   getLatestBlock() {
     return this.blockchainInstance.getLatestBlock();
   }
+
+
 }
 
 export interface IWalletKey {

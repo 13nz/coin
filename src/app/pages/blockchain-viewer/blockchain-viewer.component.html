@@ -3,7 +3,7 @@
     <p>Click a block to view transactions.</p>
 
     <app-block-view
-        *ngFor="let block of blocks"
+        *ngFor="let block of blocks; trackBy: trackItem"
         [block]="block"
         (click)="showTransactions(block)"
     ></app-block-view>
@@ -13,7 +13,7 @@
 
 <div class="container">
     <h1>Transactions inside block {{ getBlockNumber(selectedBlock) }}</h1>
-    <app-transactions-table>
-        [transactions]="selectedBlock.transactions"
-    </app-transactions-table>
+    <app-transactions-table
+    [transactions]="selectedBlock.transactions"
+    ></app-transactions-table>
 </div>

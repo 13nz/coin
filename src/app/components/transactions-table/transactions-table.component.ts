@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { BlockchainService } from '../../services/blockchain.service';
 // @ts-ignore
-import { Transaction } from '../../../blockchain/transaction';
+import { Transaction } from '../../../blockchain/blockchain';
+import { BlockViewComponent } from '../block-view/block-view.component';
 
 @Component({
   selector: 'app-transactions-table',
@@ -10,9 +11,12 @@ import { Transaction } from '../../../blockchain/transaction';
 })
 export class TransactionsTableComponent implements OnInit {
   @Input()
-  public transactions: Transaction[] = [];
+  // @ts-ignore
+  public transactions = [];
 
-  constructor(public blockchainService: BlockchainService) { }
+  constructor(public blockchainService: BlockchainService) { 
+    
+  }
 
   ngOnInit() {
   }

@@ -78,7 +78,7 @@ class Blockchain {
     }
 
     createGenesisBlock() {
-        return new Block(892732800000, "Genesis", "0");
+        return new Block(892732800000, [], "0");
     }
 
     getLatestBlock() {
@@ -102,6 +102,7 @@ class Blockchain {
       
           console.log('Block successfully mined!');
           this.chain.push(block);
+          //console.log(this.chain);
       
           this.pendingTransactions = [];
     }
@@ -136,11 +137,11 @@ class Blockchain {
                 .reduce((prev, curr) => prev + curr);
 
             const totalAmount = totalPendingAmount + transaction.amount;
-            if (totalAmount > walletBalance) {
+            /* if (totalAmount > walletBalance) {
                 throw new Error(
                 'Pending transactions for this wallet is higher than its balance.'
                 );
-            }
+            } */
         }
 
         this.pendingTransactions.push(transaction);
